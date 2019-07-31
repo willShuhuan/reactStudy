@@ -1,0 +1,41 @@
+.wrap {
+  padding: 0pt;
+  display: flex;
+
+  p {
+    margin: 0;
+  }
+
+  .item-img {
+    width: 120pt;
+    height: 75pt;
+    border-radius: 4pt;
+  }
+
+  .item-info {
+    margin-left: 10pt;
+    //display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .top {
+      .title {
+        font-size: 13pt;
+        color: rgba(0, 0, 0, 1);
+      }
+
+      .type {
+        font-size: 12pt;
+        color: rgba(153, 153, 153, 1);
+      }
+    }
+
+    .bottom {
+      .time {
+        font-size: 11pt;
+        color: rgba(153, 153, 153, 1);
+        line-height: 20pt;
+      }
+    }
+  }
+}

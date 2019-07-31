@@ -1,0 +1,118 @@
+{
+  "Data": {
+
+
+    "ActivityData": {
+      "appId": 0,
+      "appKey": null,
+      "projectId": 0,
+
+
+      "ActConfig": [{
+        "appId": 0,
+        "appKey": null,
+        "projectId": 0,
+        "ImageFile": "https:\/\/xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com\/Party\/5\/110096\/act\/2017\/12\/28\/2017122821062848942150.jpg?x-oss-process=image\/crop,x_0,y_-3,w_997,h_494\/quality,q_80\/format,jpg",
+        "Type": "TopFile"
+      }, {
+        "appId": 0,
+        "appKey": null,
+        "projectId": 0,
+        "ImageFile": "https:\/\/xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com\/Party\/5\/110096\/act\/2017\/12\/28\/2017122821063782022734.jpg?x-oss-process=image\/crop,x_0,y_-3,w_997,h_494\/quality,q_80\/format,jpg",
+        "Type": "DetailFile"
+      }],
+
+
+      "ActDetail": "https:\/\/xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com\/Party\/5\/110096\/ActDetail\/167\/167.js?r=637001898778945312",
+
+
+      "ActExtend": {
+        "appId": 0,
+        "appKey": null,
+        "projectId": 0,
+        "ActId": 167,
+        "AddUserNum": 0,
+        "AttandType": 4,
+        "DisplayNum": 0,
+        "DrawId": 0,
+        "IsLimitNum": 1,
+        "IsRandom": 0,
+        "LimitType": 8,
+        "MaxPartakeNum": 10,
+        "PartakeNum": 10,
+        "RealUserNum": 0,
+        "RewarType": 2,
+        "RuleType": 1
+      },
+
+
+      "ActType": 4,
+      "ButtonStates": 2,
+      "CompanyIcon": "",
+      "CompanyName": "圆梦秦皇岛",
+      "EndTime": "\/Date(1515340800000+0800)\/",
+      "Id": 167,
+      "IsUserNum": 1,
+      "IsWinList": 0,
+      "PassWord": "",
+      "ShareFile": "",
+      "ShareUrl": "\/App\/activity\/Vote\/index.html?id=167&appId=110096&projectId=5",
+      "StartTime": "\/Date(1514390400000+0800)\/",
+      "States": 4,
+      "Template": "TACT201",
+      "Title": "2017开发区十大新闻评选活动",
+      "UserNum": 23473
+    },
+
+
+    "AnswerData": null,
+    "DrawData": null,
+    "SurplusNum": 0,
+
+
+    "VoteData": {
+      "ActorNo": 17,
+      "AllBallot": 1395,
+      "CanNo": 10,
+      "UserNo": 23473,
+      "VoteLog": 0,
+            "VoteOptionsList": [ {
+              "appId": 0,
+              "appKey": null,
+              "projectId": 0,
+              "ActId": 167,
+              "AddBallot": 10,
+              "AppId": 110096,
+              "Authors": null,
+              "Ballot": 128,
+              "Code": "06",
+              "CreateTime": "\/Date(1514465389513+0800)\/",
+              "CreateUser": 9642,
+              "Id": 98,
+              "Img": {
+                "height": "500",
+                "src": "https:\/\/xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com\/Party\/5\/110096\/act\/2017\/12\/29\/2017122910414541806898.jpg?x-oss-process=image\/crop,x_0,y_0,w_500,h_500\/quality,q_80\/format,jpg",
+                "width": "500"
+              },
+              "ImgFile": "https:\/\/xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com\/Party\/5\/110096\/act\/2017\/12\/29\/2017122910414541806898.jpg?x-oss-process=image\/crop,x_0,y_0,w_500,h_500\/quality,q_80\/format,jpg",
+              "ImgFiles": "\/Party\/5\/110096\/content\/2017\/12\/29\/2017122913555370541460.jpg?x-oss-process=image\/crop,x_0,y_0,w_1656,h_2950\/quality,q_80\/format,jpg",
+              "ImgList": ["https:\/\/xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com\/Party\/5\/110096\/content\/2017\/12\/29\/2017122913555370541460.jpg?x-oss-process=image\/crop,x_0,y_0,w_1656,h_2950\/quality,q_80\/format,jpg"],
+              "IsLink": 2,
+              "IsVote": 0,
+              "LinkUrl": "",
+              "Meno": null,
+              "Phone": "",
+              "Source": null,
+              "States": 4,
+              "Title": "006",
+              "UpdateTime": "\/Date(1514526954577+0800)\/",
+              "VoteContent": ""
+            }]
+
+    }
+  },
+  "Message": "操作成功",
+  "PageSize": 0,
+  "Status": 1,
+  "Total": 0
+}
