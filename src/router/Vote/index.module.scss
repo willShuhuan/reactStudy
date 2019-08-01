@@ -2,7 +2,8 @@ body {
     background: #f0f0f0;
     display: block;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    width: 26rem;
 }
 
 header {
@@ -14,6 +15,27 @@ header {
 a img, fieldset, img {
     border: 0;
     -webkit-user-drag: none;
+}
+
+div{
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 11.2rem;
+    list-style: none;
+}
+
+li {
+    margin: 1rem 0;
+    -webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, .2);
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, .2);
+    display: list-item;
+    text-align: -webkit-match-parent;
 }
 
 .fn-contain {
@@ -120,7 +142,7 @@ a img, fieldset, img {
 }
 
 .tp-section {
-    padding: 0 .5rem;
+    padding: 0.6rem;
     width: 100%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -218,6 +240,88 @@ a img, fieldset, img {
 
 
         }
+    }
+
+    .tp-section-pbl {
+        position: relative;
+        margin-top: 0rem;
+        padding: .5rem;
+
+        .tp-section-pbl-info {
+            height: 6.5rem;
+            width: 100%;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: .5rem .5rem ;
+
+            .tp-section-pbl-info-span1 {
+                line-height: 1.6rem;
+                width: 100%;
+                display: block;
+                height: 1.6rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -o-text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 1.2rem;
+            }
+
+            .tp-section-pbl-info-span2 {
+                line-height: 1.5rem;
+                height: 1.5rem;
+                width: 100%;
+                display: block;
+                color: #b3b3b3;
+                font-size: 1rem;
+            }
+
+            .tp-section-pbl-info-span3 {
+                font-size: 1.2rem;
+                line-height: 2rem;
+                height: 2rem;
+                display: inline-block;
+                float: left;
+                color: #ff5f3f;
+                font-weight: 700;
+            }
+
+            .tp-section-pbl-info-span4 {
+                line-height: 2rem;
+                display: inline-block;
+                float: right;
+                width: 4rem;
+                height: 2rem;
+                border-radius: 1rem;
+                text-align: center;
+                background-color: #b3b3b3;
+                color: #fff;
+            }
+
+            .tp-section-pbl-info-span5 {
+                font-size: 1.1rem;
+            }
+
+        }
+
+
+    }
+
+    .fn-left {
+        float: left;
+        display: inline;
+    }
+    .fn-right {
+        float: right;
+        display: inline;
+    }
+
+    .imgbar {
+        overflow: hidden;
+    }
+
+    .imgbar img {
+        display: block;
+        width: 100%;
     }
 
 

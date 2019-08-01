@@ -12,6 +12,9 @@ class Vote extends Component {
     state = {
         // query: getQueryString(this.props.location.search),
         voteInfo: {},
+        VoteOptionsList:[],
+        VoteOptionsListLeft:[],
+        VoteOptionsListRight:[],
         InputValue : "",//输入框输入值
     }
 
@@ -36,13 +39,36 @@ class Vote extends Component {
         }).then(res => {
             this.setState({
                 voteInfo: res.Data.VoteData,
+                VoteOptionsList:res.Data.VoteData.VoteOptionsList,
 
             }, () => {
                 console.log("响应数据为"+res)
             });
+        }).then(()=>{
+            this.sortList()
         });
 
+
     }
+
+    sortList(){
+        let leftList=[];
+        let rightList=[];
+        this.state.VoteOptionsList.map((item,index)=>{
+            if (index%2==0){
+                leftList.push(item)
+            }else {
+                rightList.push(item)
+            }
+        });
+
+        this.setState({
+            VoteOptionsListLeft:leftList,
+            VoteOptionsListRight:rightList,
+        });
+    }
+
+
 
 
     render() {
@@ -97,10 +123,82 @@ class Vote extends Component {
                             <span className={styles["tp-section-info-span3"]}>参与投票人数</span>
                         </div>
                     </div>
-                    {/*<div id="tp-section-pbl" className={styles["fn-clear">*/}
-                        {/*<ul className={styles["fn-left" id="j-list-left"><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(93,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910302819253072.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">001</span><span className={styles["tp-section-pbl-info-span2">01号</span><span className={styles["tp-section-pbl-info-span3">133<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="93">已结束</span></div></li><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(98,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910414541806898.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">006</span><span className={styles["tp-section-pbl-info-span2">06号</span><span className={styles["tp-section-pbl-info-span3">128<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="98">已结束</span></div></li><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(99,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910421643282096.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">007</span><span className={styles["tp-section-pbl-info-span2">07号</span><span className={styles["tp-section-pbl-info-span3">115<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="99">已结束</span></div></li><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(104,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910444927176904.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">012</span><span className={styles["tp-section-pbl-info-span2">12号</span><span className={styles["tp-section-pbl-info-span3">99<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="104">已结束</span></div></li><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(109,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910472478915541.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">017</span><span className={styles["tp-section-pbl-info-span2">17号</span><span className={styles["tp-section-pbl-info-span3">86<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="109">已结束</span></div></li><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(101,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910431979775695.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">009</span><span className={styles["tp-section-pbl-info-span2">09号</span><span className={styles["tp-section-pbl-info-span3">78<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="101">已结束</span></div></li><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(97,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910411449614218.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">005</span><span className={styles["tp-section-pbl-info-span2">05号</span><span className={styles["tp-section-pbl-info-span3">53<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="97">已结束</span></div></li><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(107,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910462481593036.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">015</span><span className={styles["tp-section-pbl-info-span2">15号</span><span className={styles["tp-section-pbl-info-span3">22<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="107">已结束</span></div></li><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(105,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910452643198591.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">013</span><span className={styles["tp-section-pbl-info-span2">13号</span><span className={styles["tp-section-pbl-info-span3">15<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="105">已结束</span></div></li></ul>*/}
-                        {/*<ul className={styles["fn-right" id="j-list-right"><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(94,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910313641253015.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">002</span><span className={styles["tp-section-pbl-info-span2">02号</span><span className={styles["tp-section-pbl-info-span3">132<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="94">已结束</span></div></li><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(96,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910335722816598.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">004</span><span className={styles["tp-section-pbl-info-span2">04号</span><span className={styles["tp-section-pbl-info-span3">117<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="96">已结束</span></div></li><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(103,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910441222688567.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">011</span><span className={styles["tp-section-pbl-info-span2">11号</span><span className={styles["tp-section-pbl-info-span3">111<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="103">已结束</span></div></li><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(100,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910424711343270.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">008</span><span className={styles["tp-section-pbl-info-span2">08号</span><span className={styles["tp-section-pbl-info-span3">87<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="100">已结束</span></div></li><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(106,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910455947602638.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">014</span><span className={styles["tp-section-pbl-info-span2">14号</span><span className={styles["tp-section-pbl-info-span3">85<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="106">已结束</span></div></li><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(95,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910331576719788.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">003</span><span className={styles["tp-section-pbl-info-span2">03号</span><span className={styles["tp-section-pbl-info-span3">63<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="95">已结束</span></div></li><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(108,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910470644959100.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">016</span><span className={styles["tp-section-pbl-info-span2">16号</span><span className={styles["tp-section-pbl-info-span3">50<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="108">已结束</span></div></li><li><div className={styles["imgbar" style="height:192px;"><img onclick="goToHtml(102,0,1,10,'')" src="https://xinhuaapp-img.oss-cn-hangzhou.aliyuncs.com/Party/5/110096/act/2017/12/29/2017122910434077917709.jpg?x-oss-process=image/crop,x_0,y_0,w_500,h_500/quality,q_80/format,jpg"></div><div className={styles["tp-section-pbl-info"><span className={styles["tp-section-pbl-info-span1">010</span><span className={styles["tp-section-pbl-info-span2">10号</span><span className={styles["tp-section-pbl-info-span3">21<span className={styles["tp-section-pbl-info-span5"> 票</span></span><span onclick="isUnVote(1)" className={styles["tp-section-pbl-info-span4 tp-section-pbl-color2" thisid="102">已结束</span></div></li></ul>*/}
-                    {/*</div>*/}
+
+
+                    {/*选项列表*/}
+                    <div className={styles["tp-section-pbl"]}>
+                        <ul className={styles["fn-left"]}>
+
+                            {
+                                this.state.VoteOptionsListLeft.map((item,i)=>(
+                                    <li key = {i*2}>
+                                        <div className={styles["imgbar"]}>
+                                            <img src={item.Img.src}/>
+                                        </div>
+                                        <div className={styles["tp-section-pbl-info"]}>
+                                            <span className={styles["tp-section-pbl-info-span1"]}>{item.Title}</span>
+                                            <span className={styles["tp-section-pbl-info-span2"]}>{item.Code}</span>
+                                            <span className={styles["tp-section-pbl-info-span3"]}>{item.Ballot}
+                                                <span className={styles["tp-section-pbl-info-span5"]}> 票</span>
+                                            </span>
+                                            <span  className={styles["tp-section-pbl-info-span4"]} thisid="93">{item.States==4?'已结束':'进行中'}</span>
+                                        </div>
+                                    </li>
+                                ))
+                            }
+
+
+                       </ul>
+
+                        <ul className={styles["fn-right"]}>
+                            {
+                                this.state.VoteOptionsListRight.map((item,i)=>(
+                                    <li key = {(i*2+1)}>
+                                        <div className={styles["imgbar"]}>
+                                            <img src={item.Img.src}/>
+                                        </div>
+                                        <div className={styles["tp-section-pbl-info"]}>
+                                            <span className={styles["tp-section-pbl-info-span1"]}>{item.Title}</span>
+                                            <span className={styles["tp-section-pbl-info-span2"]}>{item.Code}</span>
+                                            <span className={styles["tp-section-pbl-info-span3"]}>{item.Ballot}
+                                                <span className={styles["tp-section-pbl-info-span5"]}> 票</span>
+                                            </span>
+                                            <span  className={styles["tp-section-pbl-info-span4"]} thisid="93">{item.States==4?'已结束':'进行中'}</span>
+                                        </div>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+
+                        {/*{*/}
+                            {/*this.state.VoteOptionsList.map((item,i)=>(*/}
+
+                                {/*<ul key={i} className={i%2 == 0?styles['fn-left']:styles['fn-right']}>*/}
+
+                                    {/*<li >*/}
+                                        {/*<div className={styles["imgbar"]}>*/}
+                                            {/*<img src={item.Img.src}/>*/}
+                                        {/*</div>*/}
+                                        {/*<div className={styles["tp-section-pbl-info"]}>*/}
+                                            {/*<span className={styles["tp-section-pbl-info-span1"]}>{item.Title}</span>*/}
+                                            {/*<span className={styles["tp-section-pbl-info-span2"]}>{item.Code}</span>*/}
+                                            {/*<span className={styles["tp-section-pbl-info-span3"]}>{item.Ballot}*/}
+                                                {/*<span className={styles["tp-section-pbl-info-span5"]}> 票</span>*/}
+                                            {/*</span>*/}
+                                            {/*<span  className={styles["tp-section-pbl-info-span4"]} thisid="93">{item.States==4?'已结束':'进行中'}</span>*/}
+                                        {/*</div>*/}
+                                    {/*</li>*/}
+
+                                {/*</ul>*/}
+
+                            {/*))*/}
+
+                        {/*}*/}
+
+
+
+
+                    </div>
                 </section>
 
             </div>
