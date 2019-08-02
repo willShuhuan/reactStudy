@@ -5,7 +5,7 @@ import axios from '../../axios.js';
 import BgLabel from '../../components/BgLabel';
 import RelevantItem from '../../components/RelevantItem';
 
-class News extends Component {
+class FillScreen extends React.Component {
 
     state = {
         // query: getQueryString(this.props.location.search),
@@ -151,11 +151,10 @@ class News extends Component {
                     </div>
                 </div>
 
-
             </div>
         )
 
     }
 }
 
-export default News;
+export default FillScreen;

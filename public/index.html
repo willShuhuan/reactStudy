@@ -10,6 +10,25 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>React App</title>
   </head>
+  <script>
+      //rem适配,这个值只影响rem值，这里假设屏幕宽度360rem，可以按设计稿理解1pt（dp） = 1rem
+      function setHtmlFontSize() {
+          var fontsize =  document.documentElement.clientWidth /50 + 'px';
+          console.log("字体基准大小为"+fontsize)
+          document.documentElement.style.fontSize = fontsize;
+      }
+
+      setHtmlFontSize();
+
+      window.onresize = function() {
+          setHtmlFontSize();
+      }
+
+
+
+
+
+  </script>
   <body>
     <div id="root"></div>
     <div id="root2"></div>

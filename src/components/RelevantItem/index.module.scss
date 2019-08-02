@@ -7,34 +7,34 @@
   }
 
   .item-img {
-    width: 120pt;
-    height: 75pt;
-    border-radius: 4pt;
+    width: 120px;
+    height: 86px;
+    border-radius: 4px;
   }
 
   .item-info {
-    margin-left: 10pt;
+    margin-left: 10px;
     //display: flex;
     flex-direction: column;
     justify-content: space-between;
 
     .top {
       .title {
-        font-size: 13pt;
+        font-size: 14px;
         color: rgba(0, 0, 0, 1);
       }
 
       .type {
-        font-size: 12pt;
+        font-size: 12px;
         color: rgba(153, 153, 153, 1);
       }
     }
 
     .bottom {
       .time {
-        font-size: 11pt;
+        font-size: 11px;
         color: rgba(153, 153, 153, 1);
-        line-height: 20pt;
+        line-height: 16px;
       }
     }
   }

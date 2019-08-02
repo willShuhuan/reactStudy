@@ -1,6 +1,5 @@
-// eslint-disable-next-line
+//eslint-disable-next-line
 import React, { Component } from 'react';
-import ReactDOM from "react-dom";
 
 class Factory extends React.Component {
 

@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import ReactDOM from "react-dom";
 import styles from './index.module.scss';
 import axios from "../../axios";
 
 
 class Vote extends Component {
-
-
-
 
     state = {
         // query: getQueryString(this.props.location.search),
@@ -102,7 +98,7 @@ class Vote extends Component {
 
                 <section className={styles["tp-section"]}>
                     <div className={styles["tp-section-search"]}>
-                        <input className={styles["tp-section-search-input"]} placeholder="输入编号或姓名搜索投票信息..."/>
+                        <input className={styles["tp-section-search-input"]} placeholder="输入编号或姓名搜索投票信息"/>
                             <img className={styles["tp-section-search-icon"]} src={require('../../static/img/search.png')}/>
                                 <div className={styles["tp-section-search-button"]}>搜索</div>
                     </div>

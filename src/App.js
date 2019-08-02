@@ -9,8 +9,11 @@ import loadable from 'loadable-components';
 const Hello = loadable(() => import('./router/HelloReact'));
 const Food = loadable(() => import('./router/Food'));
 const Factory = loadable(() => import('./router/Factory'));
-const Vote = loadable(() => import('./router/Vote'));
-const NEWS = loadable(() => import('./router/News'));
+const Vote = loadable(() => import('./router/Vote'));//投票
+const NEWS = loadable(() => import('./router/News'));//新闻详情
+const LuckyDraw = loadable(() => import('./router/LuckyDraw'));//抽奖
+const Lucky2 = loadable(() => import('./router/LuckyNine'));//九宫格抽奖
+const FillScreen = loadable(() => import('./router/FillScreen'));//pt适配
 
 
 const history = createBrowserHistory();
@@ -25,6 +28,9 @@ function App() {
                 <Route path="/hello/helloFactory" component={Factory} />
                 <Route path="/hello/vote" component={Vote} />
                 <Route path="/hello/newsDetail" component={NEWS} />
+                <Route path="/hello/lucky" component={LuckyDraw} />
+                <Route path="/hello/lucky9" component={Lucky2} />
+                <Route path="/hello/fillscreen" component={FillScreen} />
             </Switch>
         </Router>
     );

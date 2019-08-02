@@ -1,0 +1,55 @@
+@function rem($px){
+  @return $px * 36 / 800 + rem;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.demo {
+  height: rem(510);
+  margin: rem(20);
+  border: 1px solid #ffe23f;
+  background: #fff;
+  position: relative;
+  .start_button {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: calc(50% - 55px);
+    top: calc(50% - 20px);
+    width: rem(150);
+    height: rem(60);
+    line-height: rem(60);
+    text-align: center;
+    background: aliceblue;
+  }
+  .one {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    .row_item {
+      width: rem(160);
+      height: rem(160);
+      line-height: rem(160);
+      text-align: center;
+      background: #f0f0f0;
+    }
+    .row_item-active {
+      width: rem(160);
+      height: rem(160);
+      line-height: rem(160);
+      text-align: center;
+      background: aquamarine;
+      animation: blink 1s 3;
+    }
+    @keyframes blink{
+      to {
+        color: transparent;
+      }
+    }
+  }
+}
