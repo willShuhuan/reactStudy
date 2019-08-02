@@ -98,9 +98,9 @@ class Vote extends Component {
 
                 <section className={styles["tp-section"]}>
                     <div className={styles["tp-section-search"]}>
+                        <img className={styles["tp-section-search-icon"]} src={require('../../static/img/search.png')}/>
                         <input className={styles["tp-section-search-input"]} placeholder="输入编号或姓名搜索投票信息"/>
-                            <img className={styles["tp-section-search-icon"]} src={require('../../static/img/search.png')}/>
-                                <div className={styles["tp-section-search-button"]}>搜索</div>
+                        <div className={styles["tp-section-search-button"]}>搜索</div>
                     </div>
                     <div className={styles["tp-section-info"]}>
                         <div className={styles["tp-section-info-detail"]}>

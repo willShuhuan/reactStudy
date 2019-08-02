@@ -1,5 +1,10 @@
+
+html{
+  min-width: 320px;
+  max-width: 640px;
+  margin: 0 auto;
+}
 body {
-  line-height: 1.6;
   margin: 0 auto;
   padding: 10px;
   -webkit-text-size-adjust: none;
@@ -8,13 +13,18 @@ body {
 h1 {
   display: block;
   font-size: 20px;
-  //font-size: 20rem;
   font-weight: bold;
 }
 
 p {
   display: block;
-  font-size: 16px;
+  line-height: 1.6;
+  //font-size: 16px;
+}
+
+div{
+  padding: 0;
+  margin: 0;
 }
 
 .page-wrap {
@@ -108,7 +118,10 @@ p {
 
   .comment-submit .btnwrap {
     text-align: right;
-    margin-top: 8px;
+    line-height: 24px;
+    height: 24px;
+    display: block;
+    vertical-align: center;
   }
 
   .comment-submit .btnwrap span {
@@ -120,6 +133,7 @@ p {
     text-align: center;
     border-radius: 2px;
     color: #fff;
+    vertical-align: top;
   }
 
   .relevant-wrap {
@@ -132,7 +146,8 @@ p {
 
   .mo-sharetitle {
     margin-top: 40px ;
-    font-size: 20px;
+    font-size: 18px;
+    //font-size: 18px;
     color: #999;
     border-top: 1px solid #eee;
   }
@@ -151,7 +166,7 @@ p {
   .mo-sharebtn {
     display: flex;
     display: -webkit-flex;
-    margin-bottom: 2rem;
+    margin-bottom: rem(0);
   }
 
   .mo-sharebtn p {
@@ -162,58 +177,58 @@ p {
   }
 
   .mo-sharebtn .text {
-    margin-top: -0.12rem;
+    margin-top: -12px;
     display: inline-block;
-    //width: 1.28rem;
-    font-size: 0.8rem;
+    font-size: 12px;
     color: #666;
     font-style: normal;
   }
 
   .mo-sharebtn .icon {
     display: inline-block;
-    width: 1.28rem;
-    height: 1.28rem;
+    width: 40px;
+    height: 40px;
     background: url(../../static/img/sharebtn.png) no-repeat center center;
-    background-size: auto 1.28rem;
+    background-size: auto 40px;
   }
 
 
 
   .qq {
     display: inline-block;
-    width: 4rem;
-    height: 4rem;
+    width: 80px;
+    height: 80px;
     background: url(../../static/img/sharebtn.png) no-repeat center center;
-    background-size: auto 4rem;
+    background-size: auto 80px;
+    line-height: 80px;
     background-position: left center;
   }
 
   .mo-sharebtn .pyq {
     display: inline-block;
-    width: 4rem;
-    height: 4rem;
+    width: 80px;
+    height: 80px;
     background: url(../../static/img/sharebtn.png) no-repeat center center;
-    background-size: auto 4rem;
-    background-position: -4rem center;
+    background-size: auto 80px;
+    background-position: -80px center;
   }
 
   .mo-sharebtn .wx {
     display: inline-block;
-    width: 4rem;
-    height: 4rem;
+    width: 80px;
+    height: 80px;
     background: url(../../static/img/sharebtn.png) no-repeat center center;
-    background-size: auto 4rem;
-    background-position: -8rem center;
+    background-size: auto 80px;
+    background-position: -160px center;
   }
 
   .mo-sharebtn .xl {
     display: inline-block;
-    width: 4rem;
-    height: 4rem;
+    width: 80px;
+    height: 80px;
     background: url(../../static/img/sharebtn.png) no-repeat center center;
-    background-size: auto 4rem;
-    background-position: -12rem center;
+    background-size: auto 80px;
+    background-position: -240px center;
   }
 
   .share-em {

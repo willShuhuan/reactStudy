@@ -1,5 +1,5 @@
 @function rem($px){
-    @return $px * 50/375 + rem;
+    @return $px/50 + rem;
 }
 
 body {
@@ -22,26 +22,21 @@ a img, fieldset, img {
     //-webkit-user-drag: none;
 }
 
-div{
-    padding: 0;
-    margin: 0;
-}
 
 ul {
     margin: 0;
     padding: 0;
     display: inline-block;
     width: 50%;
+    //width: rem(180);
     list-style: none;
 }
 
 li {
     padding: 0;
     margin: 6% 3%;
-    //-webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, .2);
     box-shadow: 1px 1px 6px rgba(0, 0, 0, .2);
     display: list-item;
-    //text-align: -webkit-match-parent;
 }
 
 .fn-contain {
@@ -75,33 +70,39 @@ li {
         background: #fff;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        padding: rem(10);
+        padding: rem(8);
+        line-height: rem(54);
         display: flex;
 
         .tp-header-nav-child {
             flex: 1;
             text-align: center;
 
+
             img {
                 width: rem(24);
                 height: rem(24);
-                margin: 1rem auto;
-                text-align: center;
+                margin: rem(8) ;
+                display: block;
+                vertical-align: middle;
             }
 
             .icon1 {
                 width: rem(40);
                 height: rem(40);
+                line-height: rem(40);
                 border-radius: 50%;
                 display: inline-block;
+                text-align: center;
                 background-color: #f38759;
+
             }
 
             .font1 {
                 font-size: rem(14);
                 line-height: rem(18);
                 display: block;
-                height: rem(14);
+                height: rem(18);
                 color: #f38759;
             }
 
@@ -109,6 +110,7 @@ li {
             .icon2 {
                 width: rem(40);
                 height: rem(40);
+                line-height: rem(40);
                 border-radius: 50%;
                 display: inline-block;
                 background-color: #53bcec;
@@ -118,7 +120,7 @@ li {
                 font-size: rem(14);
                 line-height: rem(18);
                 display: block;
-                height: rem(14);
+                height: rem(18);
                 color: #53bcec;
             }
 
@@ -126,6 +128,7 @@ li {
             .icon3 {
                 width: rem(40);
                 height: rem(40);
+                line-height: rem(40);
                 border-radius: 50%;
                 display: inline-block;
                 background-color: #b8dc58;
@@ -136,7 +139,7 @@ li {
                 font-size: rem(14);
                 line-height: rem(18);
                 display: block;
-                height: rem(14);
+                height: rem(18);
                 color: #b8dc58;
             }
         }
@@ -147,6 +150,8 @@ li {
 .tp-section {
     padding: 0 rem(2);
     width: 100%;
+    display: block;
+    position: relative;
     box-sizing: border-box;
 
     .tp-section-search {
@@ -155,24 +160,28 @@ li {
         margin: rem(10) rem(6);
         border-radius: rem(8);
         padding: rem(1);
+        text-align: center;
+        display: flex;
         box-sizing: border-box;
-
-        .tp-section-search-input {
-            outline: 0;
-            //-webkit-appearance: none;
-            border: none;
-            width: 60%;
-            font-size: rem(14);
-            margin: rem(7) rem(0);
-            height: rem(14);
-            line-height: rem(14);
-        }
 
         .tp-section-search-icon {
             width: rem(12);
             height: rem(12);
             margin: rem(8);
             float: left;
+        }
+
+        .tp-section-search-input {
+            outline: 0;
+            -webkit-appearance: none;
+            border: none;
+            width: 60%;
+            font-size: rem(14);
+            margin: 0 auto;
+            height: rem(26);
+            line-height: rem(26);
+            display: block;
+
         }
 
         .tp-section-search-button {
@@ -182,7 +191,6 @@ li {
             float: right;
             font-size: rem(14);
             background-color: #ff5f3f;
-            text-align: center;
             color: #fff;
             line-height: rem(20);
             border-radius: rem(4);
@@ -192,12 +200,11 @@ li {
 
     .tp-section-info {
         width: 100%;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
+        line-height: rem(20);
 
         .tp-section-info-detail {
-            flex: 1;
+            flex: 1 1;
             text-align: center;
 
             .tp-section-info-span1-color1 {
@@ -208,6 +215,7 @@ li {
             .tp-section-info-span2-color1 {
                 font-size: rem(14);
                 font-weight: 500;
+                margin-left: rem(4);
                 color: #fea928;
             }
             .tp-section-info-span1-color2 {
@@ -217,6 +225,7 @@ li {
             }
             .tp-section-info-span2-color2 {
                 font-size: rem(14);
+                margin-left: rem(4);
                 font-weight: 500;
                 color: #ff5f3d;
             }
@@ -227,6 +236,7 @@ li {
             }
             .tp-section-info-span2-color3 {
                 font-size: rem(14);
+                margin-left: rem(4);
                 font-weight: 500;
                 color: #46ca40;
             }
@@ -234,7 +244,7 @@ li {
                 font-size: rem(14);
                 display: block;
                 margin-top: rem(4);
-                letter-spacing: rem(1);
+                letter-spacing: rem(0.2);
             }
 
 
