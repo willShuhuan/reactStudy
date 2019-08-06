@@ -1,0 +1,79 @@
+@function rem($px){// px转rem
+  @return $px/50 + rem;
+}
+
+html{
+  max-width: 750px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0;
+  background: #fffbe7;
+}
+
+body {
+  background: #f0f0f0;
+  display: block;
+  padding: 0;
+  margin: 0;
+  -webkit-text-size-adjust: none;
+  -webkit-user-select: none;
+}
+
+iframe{
+  width: 100%;
+  border:none;
+  height: rem(300);
+}
+
+h1{
+  font-size: rem(24);
+}
+
+// Tab菜单栏结构
+ul.tab {
+  height:rem(44);
+  list-style:none;
+  width: 100%;
+  background: #ffffff;
+  margin:0 auto;
+  padding:0;
+  display: flex;
+  horiz-align: center;
+  text-align: center;
+}
+ul.tab li {
+  line-height: rem(44);
+  font-size: rem(16);
+  flex: 1;
+  float:left;
+  height:rem(44);
+  font:14px/24px "宋体" Arial, Helvetica, sans-serif;
+}
+
+
+//Tab内容显隐样式类
+.show { display:block; }
+.none { display:none; }
+
+//Tab菜单栏样式类
+.normal {
+  color: #000000;
+  background:#fff;
+  border:1px solid #e6f2ff;
+  //border-bottom:0;
+}
+
+.focus {
+  color:#FF3B30;
+  font-weight:bold;
+  background:#e6f2ff;
+  border:1px solid #e6f2ff;
+  //border-bottom:0;
+}
+
+.head{
+  width: 100%;
+  height: rem(300);
+  background: #f9ba00;
+  margin-bottom: rem(15);
+}

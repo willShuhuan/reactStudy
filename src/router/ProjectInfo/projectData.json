@@ -1,0 +1,21 @@
+{
+  "code": 0,
+  "message": "成功",
+  "data": {
+    "id": 333,
+    "name": "136新建的项目",
+    "type": "50e0b91d-1f6f-4940-8919-74bc6acea5cf",
+    "typeDetail": "136项目配置",
+    "createTime": "2019-07-27 14:15",
+    "beginServiceTime": "2019/07/27",
+    "endServiceTime": "2019/07/27",
+    "content": "<p>42414124</p>",
+    "pictureUrl": "https://brain-data-test.oss-cn-beijing.aliyuncs.com/2019/7/27/dsicf5euv5g.jpg?x-oss-process=image/resize,m_lfit,w_720,h_405,limit_0,color_ededed/format,jpg",
+    "score": null,
+    "deptName": "实践中心",
+    "thumbsUpTimes": 2,
+    "isThumbsUp": 0,
+    "projectIntroduceLinkUrl": "https://testwmapp.xinhuaapp.com/project/introduce?id=333"
+  },
+  "timestamp": 1565072760570
+}

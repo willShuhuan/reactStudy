@@ -18,6 +18,7 @@ const NEWS = loadable(() => import('./router/News'));//新闻详情
 const FillScreen = loadable(() => import('./router/FillScreen'));//新闻详情2
 const LuckyDraw = loadable(() => import('./router/LuckyDraw'));//抽奖
 const Lucky2 = loadable(() => import('./router/LuckyNine'));//九宫格抽奖
+const Project = loadable(() => import('./router/ProjectInfo'));//新文明活动详情
 
 
 
@@ -36,6 +37,7 @@ function App() {
                 <Route path="/hello/lucky" component={LuckyDraw} />
                 <Route path="/hello/lucky9" component={Lucky2} />
                 <Route path="/hello/fillscreen" component={FillScreen} />
+                <Route path="/hello/project" component={Project} />
             </Switch>
         </Router>
     );

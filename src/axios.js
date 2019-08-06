@@ -2,6 +2,7 @@ import axios from 'axios';
 
 //  "proxy": "http://testparty.api.xinhuaapp.com/Service"
 //  "proxy": "http://ynparty.api.xinhuaapp.com:81/Service"
+//  "proxy": " http://testwmapp.xinhuaapp.com/server/"  新文明活动详情
 axios.interceptors.request.use(config => {
   // config.url = `http://testparty.api.xinhuaapp.com/Service${config.url}`;
   // config.headers.post["Access-Control-Allow-Headers"]="*";

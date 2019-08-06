@@ -51,5 +51,6 @@
   "devDependencies": {
     "http-proxy-middleware": "^0.19.1"
   },
-  "proxy": "http://ynparty.api.xinhuaapp.com:81/Service"
+  "proxy": "http://testwmapp.xinhuaapp.com/server/"
+
 }
