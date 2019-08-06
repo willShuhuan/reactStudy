@@ -11,9 +11,25 @@
     <title>React App</title>
   </head>
   <script>
-      //rem适配,这个值只影响rem值
+      //rem适配，  iphone x 375px， 设计稿为375px 令屏幕宽度7.5rem 基准fontsize为50px  px2rem = px/50
+      //pc展示，   假设宽度为750px， fontsize就是100px    放大倍数基准*2
+      //字体rem  =  px/50 ，真实大小 rem *htmlfontsize
+      //假设渲染设计稿15px字体  手机展示大小     15/50 = 0.3rem 字体0.3*50 = 15px
+      //                      pc浏览器展示大小 15/50 = 0.3rem 字体0.3*100 = 30px
       function setHtmlFontSize() {
-          var fontsize =  document.documentElement.clientWidth /7.5 + 'px';
+          //获取设备宽度
+          var clientWidth = document.documentElement.clientWidth;
+          //限定其在各种设备上的最大最小宽度，如在pc浏览器等预览页面时，只居中展示750px宽度
+          if (clientWidth>750){
+              clientWidth = 750;
+          }
+          //小于等于320px（事实上这已经是四五年前的老旧手机了）最小展示320px宽度
+          if (clientWidth<=320){
+              clientWidth = 320;
+          }
+          // var fontsize =  document.documentElement.clientWidth /7.5 + 'px';
+          //认为屏幕宽度7.5rem，动态设置字体大小
+          var fontsize =  clientWidth /7.5 + 'px';
           console.log("字体基准大小为"+fontsize)
           document.documentElement.style.fontSize = fontsize;
       }

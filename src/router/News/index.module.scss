@@ -1,30 +1,33 @@
+html{
+  background: #eeeeee;
+}
+
 body {
-  line-height: 1.6;
+  background: white;
   max-width: 640px;
   min-width: 320px;
-  margin: 10px 10px auto;
-  padding-bottom: 2rem;
+  margin: 0 auto;
+  padding: 0.2rem;
   -webkit-text-size-adjust: none;
   -webkit-user-select: none;
 }
 h1 {
   display: block;
-  font-size: 2rem;
+  font-size: 0.4rem;
   font-weight: bold;
 }
 
 p {
+  line-height: 1.6;
   display: block;
-  font-size: 3em;
+  //font-size: 0.3rem;
 }
-
 
 
 .page-wrap {
   width: 100%;
 
   .news-title{
-    padding-top: 1.3em;
     margin: 0.24rem 0 0.12rem 0;
     color: #1a1a1a;
     font-weight: 500;
@@ -33,17 +36,17 @@ p {
   }
 
   .news-source{
-    font-size: 0.8rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.24rem;
+    margin-bottom: 0.2rem;
     color: #999;
   }
 
   .news-time{
-    margin-left: 10px;
+    margin-left: 0.1rem;
   }
 
   .news-content {
-    font-size: 0.36rem;
+    font-size: 0.3rem;
     margin: 0.24rem 0;
     text-align: justify;
     line-break: normal;
@@ -65,8 +68,8 @@ p {
   .news-reads {
     line-height: 0.24rem;
     height: 0.24rem;
-    font-size: 0.8rem;
-    margin-bottom: 2rem;
+    font-size: 0.2rem;
+    margin-bottom: 1rem;
     color: #999;
     margin-top: 0.07rem;
   }
@@ -75,11 +78,11 @@ p {
   .fabulous {
     display: inline-block;
     height: 0.8rem;
-    margin-left: 1rem;
+    margin-left: 0.2rem;
   }
 
   .fabulous img {
-    height: 0.6rem;
+    height: 0.2rem;
     vertical-align: center;
   }
 
@@ -90,17 +93,18 @@ p {
 
   .comment-submit {
     border-top: solid 1px #eeeeee;
-    padding-top: 1rem;
-    margin-top: 1rem;
+    padding-top: 0.2rem;
+    margin-top: 0.2rem;
   }
 
   .comment-submit textarea {
     width: 100%;
-    height: 6rem;
+    height: 2rem;
     border: solid 1px #eee;
-    font-size: 1rem;
+    border-radius: 0.1rem;
+    font-size: 0.28rem;
     color: #333;
-    padding: 0.4rem;
+    padding: 0.2rem;
     resize: none;
     box-sizing: border-box;
 
@@ -108,50 +112,57 @@ p {
 
   .comment-submit .btnwrap {
     text-align: right;
-    margin-top: 0.2rem;
+    margin: 0;
+    padding: 0;
+    float: top;
+    line-height: .24rem;
   }
 
   .comment-submit .btnwrap span {
     display: inline-block;
-    padding: 0.2rem 0.4rem;
-    line-height: 1.4rem;
-    font-size: 1rem;
+    padding: 0.15rem 0.2rem;
+    line-height: 0.24rem;
+    font-size: 0.24rem;
     background-color: #237cda;
     text-align: center;
-    border-radius: 0.2rem;
+    border-radius: 0.1rem;
     color: #fff;
   }
 
   .relevant-wrap {
-    padding: 0px 0px;
+    margin: 0.4rem 0;
+    line-height: 0;
   }
 
   .news-con {
-    margin-top: 10px;
+    margin-top: 0.3rem;
   }
 
   .mo-sharetitle {
-    margin-top: 3rem ;
+    margin-top: 1rem ;
     font-size: 0.36rem;
     color: #999;
-    border-top: 1.5px solid #eee;
+    border-top: 0.02rem solid #eee;
   }
 
   .mo-sharetitle p {
-    margin-top: -0.8rem;
+    margin-top: -0.26rem;
+    margin-bottom: -0.26rem;
     text-align: center;
   }
 
   .mo-sharetitle span {
     display: inline-block;
-    padding: 0 1rem;
+    padding: 0 0.2rem;
     background-color: #fff;
+    font-size: 0.36rem;
   }
 
   .mo-sharebtn {
     display: flex;
     display: -webkit-flex;
-    margin-bottom: 2rem;
+    margin-bottom: 0.2rem;
+    margin-top: 0.3rem;
   }
 
   .mo-sharebtn p {
@@ -162,18 +173,17 @@ p {
   }
 
   .mo-sharebtn .text {
-    margin-top: -0.12rem;
+    margin-top: 0rem;
     display: inline-block;
-    //width: 1.28rem;
-    font-size: 0.8rem;
+    font-size: 0.28rem;
     color: #666;
     font-style: normal;
   }
 
   .mo-sharebtn .icon {
     display: inline-block;
-    width: 1.28rem;
-    height: 1.28rem;
+    width: 0.8rem;
+    height: .8rem;
     background: url(../../static/img/sharebtn.png) no-repeat center center;
     background-size: auto 1.28rem;
   }
@@ -182,38 +192,38 @@ p {
 
   .qq {
     display: inline-block;
-    width: 4rem;
-    height: 4rem;
+    width: 1.2rem;
+    height: 1.2rem;
     background: url(../../static/img/sharebtn.png) no-repeat center center;
-    background-size: auto 4rem;
+    background-size: auto 1.2rem;
     background-position: left center;
   }
 
   .mo-sharebtn .pyq {
     display: inline-block;
-    width: 4rem;
-    height: 4rem;
+    width: 1.2rem;
+    height: 1.2rem;
     background: url(../../static/img/sharebtn.png) no-repeat center center;
-    background-size: auto 4rem;
-    background-position: -4rem center;
+    background-size: auto 1.2rem;
+    background-position: -1.2rem center;
   }
 
   .mo-sharebtn .wx {
     display: inline-block;
-    width: 4rem;
-    height: 4rem;
+    width: 1.2rem;
+    height: 1.2rem;
     background: url(../../static/img/sharebtn.png) no-repeat center center;
-    background-size: auto 4rem;
-    background-position: -8rem center;
+    background-size: auto 1.2rem;
+    background-position: -2.4rem center;
   }
 
   .mo-sharebtn .xl {
     display: inline-block;
-    width: 4rem;
-    height: 4rem;
+    width: 1.2rem;
+    height: 1.2rem;
     background: url(../../static/img/sharebtn.png) no-repeat center center;
-    background-size: auto 4rem;
-    background-position: -12rem center;
+    background-size: auto 1.2rem;
+    background-position: -3.6rem center;
   }
 
   .share-em {

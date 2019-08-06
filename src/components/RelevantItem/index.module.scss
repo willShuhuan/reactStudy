@@ -1,5 +1,5 @@
 .wrap {
-  padding: 0pt;
+  padding: 0;
   display: flex;
 
   p {
@@ -7,32 +7,34 @@
   }
 
   .item-img {
-    width: 120px;
-    height: 86px;
-    border-radius: 4px;
+    width: 2.4rem;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    border-radius: 0.08rem;
   }
 
   .item-info {
-    margin-left: 10px;
+    margin-left: 0.2rem;
+    width: 4.5rem;
     flex-direction: column;
     justify-content: space-between;
-    //display: flex;
-    line-height: 14px;
-    height: 86px;
+    display: flex;
+    line-height: 0.28rem;
+    height: 1.8rem;
 
     .top {
-      height: 66px;
+      height: 1.32rem;
       .title {
-        font-size: 14px;
-        line-height: 18px;
+        font-size: 0.32rem;
+        line-height: 0.36rem;
         color: rgba(0, 0, 0, 1);
         margin: 0;
       }
 
       .type {
         float: bottom;
-        font-size: 12px;
-        line-height: 14px;
+        font-size: 0.28rem;
+        line-height: 0.28rem;
         color: rgba(153, 153, 153, 1);
       }
     }
@@ -40,8 +42,8 @@
     .bottom {
       float: bottom;
       .time {
-        font-size: 11px;
-        line-height: 20px;
+        font-size: 0.24rem;
+        line-height: 0.4rem;
         color: rgba(153, 153, 153, 1);
         float: bottom;
       }

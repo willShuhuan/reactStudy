@@ -1,15 +1,33 @@
 @function rem($px){
-  @return $px * 36 / 800 + rem;
+  @return $px  / 50 + rem;
 }
 
-body{
+*{
   margin: 0;
   padding: 0;
 }
 
+html{
+  max-width: 750px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0;
+  background: #f9ba00;
+}
+
+body{
+  margin-top: rem(50);
+}
+
+h2{
+  font-size: rem(24);
+  text-align: center;
+  margin-bottom: rem(30);
+}
+
 .demo {
-  height: rem(510);
-  margin: rem(20);
+  //height: rem(510);
+  margin: rem(10);
   border: 1px solid #ffe23f;
   background: #fff;
   position: relative;
@@ -17,11 +35,12 @@ body{
     display: flex;
     justify-content: center;
     position: absolute;
-    left: calc(50% - 55px);
-    top: calc(50% - 20px);
-    width: rem(150);
-    height: rem(60);
-    line-height: rem(60);
+    left: 2.6rem;
+    top: 3.0rem;
+    width: rem(95);
+    height: rem(55);
+    line-height: rem(55);
+    font-size: rem(20);
     text-align: center;
     background: aliceblue;
   }
@@ -30,18 +49,20 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    //margin-top: rem(5);
+    margin-bottom: rem(5);
+    font-size: rem(18);
     .row_item {
-      width: rem(160);
-      height: rem(160);
-      line-height: rem(160);
+      width: rem(115);
+      height: rem(115);
+      line-height: rem(115);
       text-align: center;
       background: #f0f0f0;
     }
     .row_item-active {
-      width: rem(160);
-      height: rem(160);
-      line-height: rem(160);
+      width: rem(115);
+      height: rem(115);
+      line-height: rem(115);
       text-align: center;
       background: aquamarine;
       animation: blink 1s 3;

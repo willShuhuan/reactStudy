@@ -1,10 +1,12 @@
 .wrap {
   position: relative;
-  padding: 0 3px;
-  font-size: 16px;
+  padding: 0 0.06rem;
+  font-size: 0.32rem;
   font-weight: 500;
   color: rgba(0, 0, 0, 1);
-  line-height: 16px;
+  line-height: 0.36rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 
   &:after {
     content: "";
@@ -12,7 +14,7 @@
     bottom: 0px;
     left: 0;
     width: 100%;
-    height: 10px;
+    height: 0.2rem;
     background: #337FE5;
     opacity: 0.5;
   }

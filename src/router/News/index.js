@@ -12,6 +12,7 @@ class News extends Component {
         detailInfo: {},
         relatedNews: [],
         InputValue : "",//输入框输入值
+        itemInfo:{},
     }
 
     componentDidMount() {
@@ -49,6 +50,7 @@ class News extends Component {
     };
 
 
+
     handleClick(){
         const {InputValue} = this.state;
         alert("提交了"+InputValue)
@@ -58,12 +60,11 @@ class News extends Component {
     }
 
     handleItemClick(){
-        const {InputValue} = this.state;
-        alert("提交了"+InputValue)
-        this.setState({
-            InputValue : '',
-        })
+        alert(this.state.itemInfo.Title)
+        window.location.href=this.state.itemInfo.LinkUrl
     }
+
+
 
 
     render() {
@@ -130,7 +131,9 @@ class News extends Component {
                             <div className={styles['news-con']}>
                                 <RelevantItem
                                     info={this.state.relatedNews ? this.state.relatedNews[0] : {}}
-                                    onClick={info=>{window.location.href=info.LinkUrl}}
+                                    value = {this.state.itemInfo=this.state.relatedNews[0]}
+                                    // onClick={info=>{window.location.href=info.LinkUrl}
+                                    onClick={this.handleItemClick.bind(this)}
                                 />
                             </div>
                         </div>
@@ -142,7 +145,7 @@ class News extends Component {
                 <div className={styles['comment-submit']}>
                     <div>
                         <textarea
-                            value={this.state.InputValue}
+                            // value={this.state.InputValue}
                             onChange={this.handleGetInputValue}
                             placeholder="在此输入评论内容"/>
                     </div>
@@ -157,5 +160,6 @@ class News extends Component {
 
     }
 }
+
 
 export default News;

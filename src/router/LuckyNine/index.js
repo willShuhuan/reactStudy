@@ -8,14 +8,14 @@ export default class LuckyNine extends Component {
         this.state = {
             // 九宫格内容list
             list: [
-                {id: 1, name: '1%财富券'},
-                {id: 2, name: '2%财富券'},
-                {id: 3, name: '电视'},
-                {id: 4, name: '冰箱'},
-                {id: 5, name: '洗衣机'},
-                {id: 6, name: '吸尘器'},
-                {id: 7, name: '电蚊香'},
-                {id: 8, name: '小米手机'},
+                {id: 1, name: '现金5元'},
+                {id: 2, name: '现金10元'},
+                {id: 3, name: '小米电视'},
+                {id: 4, name: '海尔冰箱'},
+                {id: 5, name: '美的洗衣机'},
+                {id: 6, name: '戴森吸尘器'},
+                {id: 7, name: 'iPad'},
+                {id: 8, name: '华为手机'},
             ],
             // 被选中的格子的ID
             activedId: '',
@@ -101,22 +101,28 @@ export default class LuckyNine extends Component {
     render() {
         const { list, activedId } = this.state;
         return (
-            <div className={styles["demo"]}>
-                <div className={styles["start_button"]} onClick={() => this.handleBegin()}>开始</div>
-                <div className={styles["one"]}>
-                    <LuckyItem content={list[0]} activedId={activedId}></LuckyItem>
-                    <LuckyItem content={list[1]} activedId={activedId}></LuckyItem>
-                    <LuckyItem content={list[2]} activedId={activedId}></LuckyItem>
+
+            <div>
+                <h2 >九宫格抽奖</h2>
+
+                <div className={styles["demo"]}>
+                    <div className={styles["start_button"]} onClick={() => this.handleBegin()}>开始</div>
+                    <div className={styles["one"]}>
+                        <LuckyItem content={list[0]} activedId={activedId}/>
+                        <LuckyItem content={list[1]} activedId={activedId}/>
+                        <LuckyItem content={list[2]} activedId={activedId}/>
+                    </div>
+                    <div className={styles["one"]}>
+                        <LuckyItem content={list[7]} activedId={activedId}/>
+                        <LuckyItem content={list[3]} activedId={activedId}/>
+                    </div>
+                    <div className={styles["one"]} style={{marginBottom:0}}>
+                        <LuckyItem content={list[6]} activedId={activedId}/>
+                        <LuckyItem content={list[5]} activedId={activedId}/>
+                        <LuckyItem content={list[4]} activedId={activedId}/>
+                    </div>
                 </div>
-                <div className={styles["one"]}>
-                    <LuckyItem content={list[7]} activedId={activedId}></LuckyItem>
-                    <LuckyItem content={list[3]} activedId={activedId}></LuckyItem>
-                </div>
-                <div className={styles["one"]}>
-                    <LuckyItem content={list[6]} activedId={activedId}></LuckyItem>
-                    <LuckyItem content={list[5]} activedId={activedId}></LuckyItem>
-                    <LuckyItem content={list[4]} activedId={activedId}></LuckyItem>
-                </div>
+
             </div>
         );
     }
