@@ -1,0 +1,48 @@
+@function rem($px){// px转rem
+@return $px/50 + rem;
+}
+
+.top{
+    background: white;
+    padding-top: rem(8);
+}
+.container{
+    padding: rem(8)  rem(16);
+    line-height: 0;
+
+    .content{
+        border: 1px solid #dddddd;
+        border-radius: rem(4);
+        padding: rem(15) rem(10);
+
+        .title{
+            line-height: rem(18);
+            font-size: rem(18);
+            color: #000000;
+        }
+        .team{
+            line-height: rem(14);
+            font-size: rem(14);
+            margin-top: rem(5);
+            color: #999999;
+        }
+        .when_where{
+            margin-top: rem(20);
+            background: #f9f9f9;
+            border-radius: rem(4);
+            padding: 0 rem(10);
+            font-size: rem(14);
+            color: #666666;
+            line-height: rem(40);
+
+            .where{
+                border-bottom: 1px solid #eeeeee;
+            }
+
+            .text_right{
+                float: right;
+            }
+        }
+    }
+
+}

@@ -2,6 +2,11 @@
   @return $px/50 + rem;
 }
 
+*{
+  padding: 0;
+  margin: 0;
+}
+
 html{
   max-width: 750px;
   min-width: 320px;
@@ -20,9 +25,15 @@ body {
 }
 
 iframe{
+  background: white;
   width: 100%;
   border:none;
-  height: rem(300);
+  margin-top: 1px;
+}
+
+div{
+  padding: 0;
+  margin: 0;
 }
 
 h1{
@@ -30,25 +41,53 @@ h1{
 }
 
 // Tab菜单栏结构
-ul.tab {
-  height:rem(44);
+ul{
+  height:rem(46);
   list-style:none;
   width: 100%;
   background: #ffffff;
   margin:0 auto;
   padding:0;
   display: flex;
+  overflow: auto;
   horiz-align: center;
   text-align: center;
+  border-bottom: 1px solid #dddddd;
+  li {
+    line-height: rem(45);
+    font-size: rem(14);
+    flex: 1;
+    float:left;
+    height:rem(45);
+    font:14px/24px "宋体" Arial, Helvetica, sans-serif;
+  }
+
 }
-ul.tab li {
-  line-height: rem(44);
-  font-size: rem(16);
-  flex: 1;
-  float:left;
-  height:rem(44);
-  font:14px/24px "宋体" Arial, Helvetica, sans-serif;
+
+.tab_container{
+  height: rem(47);//固定高度解决滑动冲突
 }
+
+.tab_normal{
+  width: rem(375);//固定宽度防止li宽度变化
+  position: absolute;
+
+}
+
+.tab_top{
+  width: rem(375);
+  position: fixed;
+  top: 0px;
+  z-index: 9999;
+
+}
+
+.divider{
+  width: 100%;
+  height: rem(10);
+  background: #F5F5F5;
+}
+
 
 
 //Tab内容显隐样式类
@@ -59,21 +98,173 @@ ul.tab li {
 .normal {
   color: #000000;
   background:#fff;
-  border:1px solid #e6f2ff;
-  //border-bottom:0;
+  //border-bottom:1px solid #ffffff;
 }
 
 .focus {
   color:#FF3B30;
   font-weight:bold;
-  background:#e6f2ff;
-  border:1px solid #e6f2ff;
-  //border-bottom:0;
+  border-bottom:1px solid #ff3b30;
 }
 
 .head{
   width: 100%;
-  height: rem(300);
-  background: #f9ba00;
-  margin-bottom: rem(15);
+  background: #ffffff;
+
+    img{
+      padding-bottom: 0;
+      margin-bottom: 0;
+      width: 100%;
+      height: rem(210);
+      background-size: cover;
+    }
 }
+
+.content{
+  line-height: 0;
+  padding: 0 rem(15);
+  margin: 0;
+
+  .content_title{
+    margin: 0;
+    padding: 0;
+    font-size: rem(20);
+    color: #000000;
+    height: rem(28);
+    max-height: rem(56);
+    line-height: rem(28);
+  }
+
+  .content_type{
+    height: rem(50);
+    line-height: rem(50);
+    display: flex;
+    border-bottom: 1px solid #eeeeee;
+    
+    .divider{
+      width: 2px;
+      height: rem(14);
+      margin-top: rem(18);
+      margin-right: rem(10);
+      background: #dddddd;
+    }
+
+    .content_type_score{
+      width: rem(30);
+      font-size: rem(14);
+      margin-left: rem(5);
+      color: #ff3b30;
+
+    }
+
+    ul{
+      height: rem(20);
+      line-height: rem(20);
+      margin:0 auto;
+      padding:0;
+      border: none;
+      margin-top: rem(17);
+    }
+    .star{
+      width: rem(14);
+      height: rem(14);
+      margin-right: rem(2);
+      background: url(../../static/img/star_full.png) no-repeat center 0;
+      background-size: cover;
+    }
+
+    .content_type_name{
+      width: rem(140);
+      font-size: rem(14);
+      color: #999999;
+    }
+
+    .content_type_like{
+      width: rem(75);
+      height: rem(22);
+      line-height: rem(22);
+      border: solid 1px #ff3b30;
+      border-radius: rem(11);
+      display: flex;
+      margin: auto;
+      justify-content: center;
+
+
+      .checked{
+        margin-left: 0;
+        margin-top: rem(4);
+        width: rem(14);
+        height: rem(14);
+        background: url(../../static/img/like_selected.png) no-repeat center 0 ;
+        background-size: cover;
+
+      }
+
+      .unchecked{
+        margin-left: 0;
+        margin-top: rem(4);
+        width: rem(14);
+        height: rem(14);
+        background: url(../../static/img/like_unchecked.png) no-repeat center 0;
+        background-size: cover;
+      }
+
+      span{
+        margin-left: rem(5);
+        font-size: rem(12);
+        color: #ff3b30;
+      }
+
+    }
+
+  }
+
+  .content_source {
+    height: rem(78);
+    display: block;
+    line-height: rem(34);
+    font-size: rem(14);
+    color: #333333;
+    margin-top: rem(10);
+
+
+    div{
+      display: flex;
+    }
+
+    img{
+      margin-bottom: rem(-2);
+      padding: 0;
+    }
+
+    .calander{
+      width: rem(14);
+      height: rem(14);
+      margin-top: rem(10);
+      margin-right: rem(10);
+      background: url(../../static/img/calander.png) no-repeat center 0;
+      background-size: cover;
+
+    }
+
+    .location{
+      width: rem(14);
+      height: rem(14);
+      margin-right: rem(10);
+      margin-top: rem(10);
+      background: url(../../static/img/location.png) no-repeat center 0;
+      background-size: cover;
+    }
+
+  }
+
+
+
+}
+
+.footer{
+  //padding-top: rem(44);
+  min-height: rem(700);
+  background: white;
+}
+

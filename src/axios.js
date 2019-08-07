@@ -8,7 +8,7 @@ axios.interceptors.request.use(config => {
   // config.headers.post["Access-Control-Allow-Headers"]="*";
   // config.headers.post["Access-Control-Allow-Methods"]="GET,POST";
   // config.headers.post["Access-Control-Allow-Credentials"]="true";
-  // config.headers.post['Access-Control-Allow-Origin']="*";
+  // config.headers.post['token']="7271e6befea95aae1b0059dbef794d5b7460738f8f75484ff0d3c7f24799c46c2617be8e30d7d86036dd9acf54a194050d1d8929b1b34220971a168719c88dff1564984809012";
   return config;
 }, error => {
   alert('请求错误');

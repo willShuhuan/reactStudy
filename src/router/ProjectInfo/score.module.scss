@@ -1,0 +1,84 @@
+@function rem($px){// px转rem
+  @return $px/50 + rem;
+}
+
+.container{
+  padding: rem(20)  rem(15);
+  line-height: 0;
+  background: white;
+  border-bottom: 1px solid #eeeeee;
+
+    .title{
+      line-height: rem(16);
+      font-size: rem(16);
+      color: #000000;
+    }
+
+
+}
+
+.content_type {
+  height: rem(38);
+  line-height: rem(38);
+  display: flex;
+
+  ul{
+    height: rem(20);
+    line-height: rem(20);
+    margin:0 auto;
+    padding:0;
+    border: none;
+    margin-top: rem(12);
+  }
+  .star{
+    width: rem(14);
+    height: rem(14);
+    margin-right: rem(2);
+    background: url(../../static/img/star_full.png) no-repeat center 0;
+    background-size: cover;
+  }
+
+  .divider {
+    width: 2px;
+    height: rem(14);
+    margin-top: rem(12);
+    margin-right: rem(10);
+    background: #dddddd;
+  }
+
+  .content_type_score {
+    width: rem(30);
+    margin-left: rem(5);
+    font-size: rem(14);
+    color: #ff3b30;
+
+  }
+
+  .content_type_name {
+    width: rem(175);
+    font-size: rem(14);
+    color: #999999;
+  }
+}
+
+.content{
+  font-size: rem(16);
+  color: black;
+  font-weight: 300;
+  line-height: rem(24);
+}
+
+.photo{
+  display: flex;
+  flex-wrap: wrap;
+  width: rem(345);
+
+  .photo_item{
+    border-radius: rem(5);
+    width: rem(105);
+    height: rem(105);
+    margin: rem(5);
+    background-size: cover;
+
+  }
+}
