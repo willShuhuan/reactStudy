@@ -22,13 +22,16 @@ class ProjectInfo extends Component{
             content2:styles["none"],
             content3:styles["none"],
             topTab:styles['tab'],
-            isScrollTop:true,
-            headerHeight:0
+            isLiked:false,//是否点赞了
+            thumbsUpTimes:0,//点赞数量
+            isScrollTop:true,//是否滑动到了顶部
+            headerHeight:0//详情页头部高度
+
         }
         this.myRef = React.createRef();
         this.focusTab=this.focusTab.bind(this)
+        this.handleLike=this.handleLike.bind(this)
         this.windowOnScroll();
-        // let isScrollTop = true;
     }
 
     windowOnScroll(){
@@ -85,6 +88,8 @@ class ProjectInfo extends Component{
         }).then(res => {
             this.setState({
                 data: res.data,
+                thumbsUpTimes:res.data.thumbsUpTimes,
+                isLiked : res.data.isThumbsUp,
 
             }, () => {
                 console.log("响应数据为" + res)
@@ -132,8 +137,37 @@ class ProjectInfo extends Component{
 
     }
 
+    handleLike(){
+        if(this.state.isLiked){
+            this.setState({
+                isLiked:false,
+                thumbsUpTimes:this.state.thumbsUpTimes-1
+            })
+        }else {
+            this.setState({
+                isLiked:true,
+                thumbsUpTimes:this.state.thumbsUpTimes+1
+            })
+        }
+    }
+
     render(){
         const detailInfo = this.state.data
+        // const score = detailInfo.score;
+        const score = 3.6;
+        let lis = [];
+        for(let i=0;i<5;i++){
+            if(i+1<score){
+               lis.push(<li key={i} className={styles['star']}/>)
+            }else {
+                if(score-i<0.5){//四舍五入
+                    lis.push(<li key={i} className={styles['star_empty']}/>)
+                }else {
+                    lis.push(<li key={i} className={styles['star_half']}/>)
+                }
+            }
+
+        }
         return(
             <div>
                 {/*头部展示信息*/}
@@ -144,19 +178,15 @@ class ProjectInfo extends Component{
                         <div className={styles['content_type']}>
                             <div>
                                 <ul>
-                                    <li className={styles['star']}/>
-                                    <li className={styles['star']}/>
-                                    <li className={styles['star']}/>
-                                    <li className={styles['star']}/>
-                                    <li className={styles['star']}/>
+                                    {lis}
                                 </ul>
                             </div>
-                            <span className={styles['content_type_score']}>5分</span>
+                            <span className={styles['content_type_score']}>{score}分</span>
                             <div className={styles['divider']}/>
                             <span className={styles['content_type_name']}>{detailInfo.name}</span>
-                            <div className={styles['content_type_like']}>
-                                <span className={styles['checked']}/>
-                                <span >{detailInfo.thumbsUpTimes}</span>
+                            <div onClick={this.handleLike} className={styles['content_type_like']}>
+                                <span className={this.state.isLiked?styles['checked']:styles['unchecked']}/>
+                                <span >{this.state.thumbsUpTimes}</span>
                             </div>
                         </div>
 
