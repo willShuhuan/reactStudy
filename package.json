@@ -52,5 +52,4 @@
     "http-proxy-middleware": "^0.19.1"
   },
   "proxy": "http://testwmapp.xinhuaapp.com/server"
-
 }

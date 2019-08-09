@@ -55,6 +55,21 @@ class Score extends Component{
     }
 
     render(){
+
+        let score = 4.2;
+        let lis = [];
+        for(let i=0;i<5;i++){
+            if(i+1<=score){
+                lis.push(<li key={i} className={styles['star']}/>)
+            }else {
+                if(score-i<0.5){
+                    lis.push(<li key={i} className={styles['star_empty']}/>)
+                }else {
+                    lis.push(<li key={i} className={styles['star_half']}/>)
+                }
+            }
+        }
+
         return (
 
             <div className={styles['top']}>
@@ -66,25 +81,26 @@ class Score extends Component{
                                 <div className={styles['content_type']}>
                                     <div>
                                         <ul>
-                                            <li className={styles['star']}/>
-                                            <li className={styles['star']}/>
-                                            <li className={styles['star']}/>
-                                            <li className={styles['star']}/>
-                                            <li className={styles['star']}/>
+                                            {lis}
+                                            {/*<li className={styles['star']}/>*/}
+                                            {/*<li className={styles['star']}/>*/}
+                                            {/*<li className={styles['star']}/>*/}
+                                            {/*<li className={styles['star']}/>*/}
+                                            {/*<li className={styles['star']}/>*/}
                                         </ul>
                                     </div>
-                                    <span className={styles['content_type_score']}>5分</span>
+                                    <span className={styles['content_type_score']}>{score}分</span>
                                     <div className={styles['divider']}/>
                                     <span className={styles['content_type_name']}>{item.createTime}</span>
                                 </div>
                                 <p className={styles['content']}>{item.content}</p>
-                                <session className={styles['photo']}>
+                                <div className={styles['photo']}>
                                     {
                                         item.picUrls.map((v,j)=>(
                                             <img key={j} className={styles['photo_item']} src={v}/>
                                         ))
                                     }
-                                </session>
+                                </div>
 
                             </div>
                         </div>
